@@ -1,0 +1,19 @@
+###
+GET http://localhost:3000/
+###
+
+GET http://localhost:3000/dashboard
+
+### see data
+GET http://localhost:3000/api/data
+
+### updata data
+POST http://localhost:3000/api/data
+Content-Type: application/json
+
+{
+    "user" : "moon"
+}
+
+###
+DELETE http://localhost:3000/api/data
