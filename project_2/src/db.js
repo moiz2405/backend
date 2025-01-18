@@ -1,8 +1,12 @@
 import { DatabaseSync } from 'node:sqlite';
 
-const db = new DatabaseSync(':memory');
+const db = new DatabaseSync(':memory:');
 
-// Create users table if it doesn't already exist
+// Drop the tables if they already exist to reset on each restart
+db.exec(`DROP TABLE IF EXISTS users`);
+db.exec(`DROP TABLE IF EXISTS todos`);
+
+// Create users table
 db.exec(`
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -11,7 +15,7 @@ db.exec(`
     )
 `);
 
-// Create todos table if it doesn't already exist
+// Create todos table
 db.exec(`
     CREATE TABLE IF NOT EXISTS todos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
