@@ -3,8 +3,8 @@ import { DatabaseSync } from 'node:sqlite';
 const db = new DatabaseSync(':memory:');
 
 // Drop the tables if they already exist to reset on each restart
-db.exec(`DROP TABLE IF EXISTS users`);
-db.exec(`DROP TABLE IF EXISTS todos`);
+// db.exec(`DROP TABLE IF EXISTS users`);
+// db.exec(`DROP TABLE IF EXISTS todos`);
 
 // Create users table
 db.exec(`
