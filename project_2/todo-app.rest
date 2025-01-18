@@ -6,7 +6,7 @@ POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-    "username":"moon1",
+    "username":"moon",
     "password":"1234"
 }
 ### Login a user at /auth/login
