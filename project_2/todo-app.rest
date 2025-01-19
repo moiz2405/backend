@@ -6,14 +6,22 @@ POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-    "username":"moon",
-    "password":"1234"
+    "username":"moon2",
+    "password":"123"
 }
 ### Login a user at /auth/login
 POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-    "username":"moon",
-    "password":"1234"
+    "username":"moon2",
+    "password":"123"
 }
+
+###
+//check for todos route
+GET http://localhost:5000/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3Mjc0ODAwLCJleHAiOjE3MzczNjEyMDB9.zID2Mub8s1NWT-_K6R5C8xT04U5Abzw19oTvYjNs1-8
+
+
+###
