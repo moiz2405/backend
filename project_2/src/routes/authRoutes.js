@@ -16,7 +16,7 @@ router.post('/register', (req, res) => {
         //adding a new user 
         const insertUser = db.prepare(`INSERT INTO users (username,password) VALUES(?,?)`)
         const result = insertUser.run(username, hashedPassword)
-        
+
         //default todo
         const defaultTodo = "Hello Add your first Todo"
 
@@ -25,8 +25,7 @@ router.post('/register', (req, res) => {
         insertTodo.run(result.lastInsertRowid, defaultTodo)
 
         //create a token 
-        const token = jwt.sign({ id: result.lastInsertRowid }, process.env.JWT_SECRET, { expiresIn: '24' })
-        console.log(users)
+        const token = jwt.sign({ id: result.lastInsertRowid }, process.env.JWT_SECRET, { expiresIn: '24h' })
         res.json({ token })
 
     } catch (err) {
@@ -42,21 +41,21 @@ router.post('/login', (req, res) => {
     try {
         //fetching name from db
         const getUser = db.prepare(`SELECT * FROM users WHERE username = ?`)
-        
+
         const user = getUser.get(username)
 
         //if not a registered user
         if (!user) { return res.status(404).json({ message: "User Not Found" }) }
-        
+
         //compare passwords
         //user.password returns the hashes password and compare sync compares normal and hashed password syncronously 
         const passwordIsValid = bcrypt.compareSync(password, user.password)
-        
-        if(!passwordIsValid){return res.status(401).json({message : "Invalid Password"})}
-        
+
+        if (!passwordIsValid) { return res.status(401).json({ message: "Invalid Password" }) }
+
         console.log(user);
-        const token = jwt.sign({id : user.id}, process.env.JWT_SECRET, {expiresIn:'24'})
-        res.json({token})
+        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '24h' })
+        res.json({ token })
 
     } catch (err) {
         console.log(err);
