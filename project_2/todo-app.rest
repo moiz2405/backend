@@ -18,10 +18,17 @@ Content-Type: application/json
     "password":"123"
 }
 
-###
-//check for todos route
+###check for todos route
 GET http://localhost:5000/todos
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3Mjc0ODAwLCJleHAiOjE3MzczNjEyMDB9.zID2Mub8s1NWT-_K6R5C8xT04U5Abzw19oTvYjNs1-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzAzMDM0LCJleHAiOjE3MzczODk0MzR9.5HsoDES2ZDHadILw8bV07uY9Jo72-HnO5Gs2InfAcXU
 
 
-###
+###create a new todo
+POST http://localhost:5000/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzAzMDM0LCJleHAiOjE3MzczODk0MzR9.5HsoDES2ZDHadILw8bV07uY9Jo72-HnO5Gs2InfAcXU
+Content-Type: application/json
+
+{
+    "todoData": "Coding"
+}
+
