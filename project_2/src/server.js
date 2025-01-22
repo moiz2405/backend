@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5003
 const __filename = fileURLToPath(import.meta.url)
 // Get the directory name from the file path
 const __dirname = dirname(__filename)
-
+console.log("")
 // Middleware
 app.use(express.json())
 // Serves the HTML file from the /public directory
