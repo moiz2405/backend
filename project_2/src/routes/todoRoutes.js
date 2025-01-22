@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     const todos = getTodos.all(req.userId)
     res.json(todos)
 })
-
+console.log("")
 
 //create a new todo
 router.post('/', (req, res) => {
