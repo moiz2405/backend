@@ -6,7 +6,7 @@ POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-    "username":"moon2",
+    "username":"pavan",
     "password":"123"
 }
 ### Login a user at /auth/login
@@ -14,21 +14,42 @@ POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-    "username":"moon2",
+    "username":"pavan",
     "password":"123"
 }
 
 ###check for todos route
 GET http://localhost:5000/todos
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzAzMDM0LCJleHAiOjE3MzczODk0MzR9.5HsoDES2ZDHadILw8bV07uY9Jo72-HnO5Gs2InfAcXU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzA1NTAzLCJleHAiOjE3MzczOTE5MDN9.lw3HIi1HHSecnKTmO6fL7khEcywiudI_09HCGMEttfs
 
 
 ###create a new todo
 POST http://localhost:5000/todos
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzAzMDM0LCJleHAiOjE3MzczODk0MzR9.5HsoDES2ZDHadILw8bV07uY9Jo72-HnO5Gs2InfAcXU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzA1NTAzLCJleHAiOjE3MzczOTE5MDN9.lw3HIi1HHSecnKTmO6fL7khEcywiudI_09HCGMEttfs
 Content-Type: application/json
 
 {
-    "todoData": "Coding"
+    "todoData": "Acting"
 }
 
+###update a todo
+PUT http://localhost:5000/todos/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzA1NTAzLCJleHAiOjE3MzczOTE5MDN9.lw3HIi1HHSecnKTmO6fL7khEcywiudI_09HCGMEttfs
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+###Delete a todo
+DELETE http://localhost:5000/todos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzA1NTAzLCJleHAiOjE3MzczOTE5MDN9.lw3HIi1HHSecnKTmO6fL7khEcywiudI_09HCGMEttfs
+
+###
+GET http://localhost:5000/auth/register 
+Content-Type: application/json
+
+{
+    "username" : "pavan",
+    "password" : "1234"
+}
