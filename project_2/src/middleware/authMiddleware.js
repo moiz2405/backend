@@ -12,5 +12,5 @@ function authMiddleware(req, res, next) {
         next()
     })
 }
-
+console.log("")
 export default authMiddleware
