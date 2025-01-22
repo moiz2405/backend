@@ -44,12 +44,3 @@ Content-Type: application/json
 ###Delete a todo
 DELETE http://localhost:5000/todos/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3MzA1NTAzLCJleHAiOjE3MzczOTE5MDN9.lw3HIi1HHSecnKTmO6fL7khEcywiudI_09HCGMEttfs
-
-###
-GET http://localhost:5000/auth/register 
-Content-Type: application/json
-
-{
-    "username" : "pavan",
-    "password" : "1234"
-}
